@@ -32,6 +32,17 @@ public final class Constants
   public static final double LOOP_TIME  = 0.13; //s, 20ms + 110ms sprk max velocity lag
   public static final double MAX_SPEED  = Units.feetToMeters(14.5); // Maximum speed of the robot in meters per second, used to limit acceleration.
 
+  //elevator spark max motor CAN IDs
+  public static final int elevatorRightMotorID = 13;
+  public static final int elevatorLeftMotorID = 16;
+
+  //coral intake and elbow motor CAN IDs
+  public static final int coralIntakeID = 22;
+  public static final int coralElbowID = 15;
+
+  //climber motor CAD ID
+  public static final int climberMotorID = 23;
+
   public static final class DrivebaseConstants
   {
 

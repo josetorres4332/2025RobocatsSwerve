@@ -61,16 +61,16 @@ public class RobotContainer
     operatorXbox.a().onTrue(elevator.goToLevel1Command());
     operatorXbox.a().onFalse(elevator.holdElevatorPositionCommand());
 
-    operatorXbox.b().whileTrue(elevator.goToLevel2Command());
+    operatorXbox.b().onTrue(elevator.goToLevel2Command());
     operatorXbox.b().onFalse(elevator.holdElevatorPositionCommand());
 
-    operatorXbox.x().whileTrue(elevator.goToLevel3Command());
+    operatorXbox.x().onTrue(elevator.goToLevel3Command());
     operatorXbox.x().onFalse(elevator.holdElevatorPositionCommand());
 
-    operatorXbox.y().whileTrue(elevator.goToLevel4Command());
+    operatorXbox.y().onTrue(elevator.goToLevel4Command());
     operatorXbox.y().onFalse(elevator.holdElevatorPositionCommand());
 
-    operatorXbox.leftBumper().whileTrue(elevator.goToDefaultCommand()).whileTrue(wrist.goToWDefaultCommand());
+    operatorXbox.leftBumper().onTrue(elevator.goToDefaultCommand()).onTrue(wrist.goToWDefaultCommand());
     operatorXbox.leftBumper().onFalse(elevator.holdElevatorPositionCommand()).onFalse(wrist.holdArmPositionCommand());
 
     operatorXbox.povDown().onTrue(wrist.goToDropCommand());

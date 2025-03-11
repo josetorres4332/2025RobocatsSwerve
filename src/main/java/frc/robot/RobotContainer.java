@@ -57,28 +57,36 @@ public class RobotContainer
   /*         Pause Button = 6                                Menu Button = 7                          */
   /*                                                                                                  */
   /****************************************************************************************************/
-  
-    operatorXbox.a().onTrue(elevator.goToLevel1Command());
+    
+    //use button A to go to Level 1
+    operatorXbox.a().whileTrue(elevator.goToLevel1Command());
     operatorXbox.a().onFalse(elevator.holdElevatorPositionCommand());
 
+    //use button B to go to Level 2
     operatorXbox.b().onTrue(elevator.goToLevel2Command());
     operatorXbox.b().onFalse(elevator.holdElevatorPositionCommand());
 
+    //use button X to go to Level 3
     operatorXbox.x().onTrue(elevator.goToLevel3Command());
     operatorXbox.x().onFalse(elevator.holdElevatorPositionCommand());
 
+    //use button Y to go to Level 4
     operatorXbox.y().onTrue(elevator.goToLevel4Command());
     operatorXbox.y().onFalse(elevator.holdElevatorPositionCommand());
 
+    //use LEFT BUMPER to go to Default for traveling
     operatorXbox.leftBumper().onTrue(elevator.goToDefaultCommand()).onTrue(wrist.goToWDefaultCommand());
     operatorXbox.leftBumper().onFalse(elevator.holdElevatorPositionCommand()).onFalse(wrist.holdArmPositionCommand());
 
+    //use D-PAD DOWN to drop coral
     operatorXbox.povDown().onTrue(wrist.goToDropCommand());
     operatorXbox.povDown().onFalse(wrist.holdArmPositionCommand());
 
+    //use D-PAD UP to put wrist in travel mode
     operatorXbox.povUp().onTrue(wrist.goToWDefaultCommand());
     operatorXbox.povUp().onFalse(wrist.holdArmPositionCommand());
 
+    //use RIGHT BUMPER to climb
     operatorXbox.rightBumper().whileTrue(new ClimberCMD(climber));    
 
   }

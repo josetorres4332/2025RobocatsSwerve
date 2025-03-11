@@ -41,7 +41,7 @@ public class ElevatorSubsystem extends SubsystemBase {
     SparkMaxConfig rightConfigMotor = new SparkMaxConfig();
 
     globalConfigMotor.softLimit
-                            .forwardSoftLimit(50)
+                            .forwardSoftLimit(180)
                             .forwardSoftLimitEnabled(true)
                             .reverseSoftLimit(0)
                             .reverseSoftLimitEnabled(true);
@@ -115,13 +115,13 @@ public class ElevatorSubsystem extends SubsystemBase {
     }
 
     public void goToLevel3() {
-        double elevatorPos = 30;
+        double elevatorPos = 60;
         elevatorController.setReference(elevatorPos, ControlType.kPosition, ClosedLoopSlot.kSlot1);
         currentElevatorPos = elevatorPos;
     }
 
     public void goToLevel4() {
-        double elevatorPos = 40;
+        double elevatorPos = 118;
         elevatorController.setReference(elevatorPos, ControlType.kPosition, ClosedLoopSlot.kSlot1);
         currentElevatorPos = elevatorPos;
 

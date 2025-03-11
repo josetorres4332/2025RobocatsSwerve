@@ -23,7 +23,7 @@ public final class Constants
   public static final double DEADBAND         = 0.1;
   public static final double RIGHT_Y_DEADBAND = 0.1;
   public static final double RIGHT_X_DEADBAND = 0.1;
-  public static final double TURN_CONSTANT    = 6;
+  public static final double TURN_CONSTANT    = 1;
   public static final double Scalar = 1;
 
   //robot information 
@@ -80,9 +80,6 @@ public final class Constants
    public static final class DriverControllerAssignments
    {
      public static final int driverControllerPort = 0;  //driver controller port
-     public static final int forwardReverseAxis = 1;  //moves robot foward or reverse
-     public static final int strafeLeftRight = 0;  //makes robot strafe left or right
-     public static final int rotationLeftRight = 4;  //makes robot rotate left or right
  
    }
 
@@ -90,7 +87,7 @@ public final class Constants
    public static final class OperatorControllerAssignments
    {
 
-    public static final int operatorControllerPort = 0;  //driver controller port
+    public static final int operatorControllerPort = 1;  //driver controller port
 
    }
 }

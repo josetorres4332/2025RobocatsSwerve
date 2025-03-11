@@ -4,12 +4,14 @@
 
 package frc.robot.command;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.climber.ClimberSubsystem;
 
 public class ClimberCMD extends Command {
 
   private ClimberSubsystem climber = new ClimberSubsystem();
+  DigitalInput bottomLimitSwitch = new DigitalInput(0);
 
   public ClimberCMD(ClimberSubsystem climber) {
     this.climber = climber;
@@ -21,7 +23,14 @@ public class ClimberCMD extends Command {
 
   @Override
   public void execute(){
-    climber.motorForward();
+    if(bottomLimitSwitch.get())
+    {
+      climber.motorStop();
+    }
+    else
+    {
+      climber.motorForward();
+    }
   }
 
   @Override

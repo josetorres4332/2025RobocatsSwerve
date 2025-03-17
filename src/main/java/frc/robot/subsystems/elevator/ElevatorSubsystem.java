@@ -124,7 +124,7 @@ public class ElevatorSubsystem extends SubsystemBase {
         double elevatorPos = 118;
         elevatorController.setReference(elevatorPos, ControlType.kPosition, ClosedLoopSlot.kSlot1);
         currentElevatorPos = elevatorPos;
-
+ // 
     }
 
     public void goToDefault() {

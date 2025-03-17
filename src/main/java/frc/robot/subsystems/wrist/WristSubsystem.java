@@ -100,19 +100,18 @@ public class WristSubsystem extends SubsystemBase {
   }
 
     public void goToDropLevel() {
-        double wristPos = 8;
+        double wristPos = 15;
         wristController.setReference(wristPos, ControlType.kPosition, ClosedLoopSlot.kSlot1);
         currentWristPos = wristPos;
     }
 
     public void goToWDefault() {
-        double wristPos = 0;
+        double wristPos = 5;
         wristController.setReference(wristPos, ControlType.kPosition, ClosedLoopSlot.kSlot1);
         currentWristPos = wristPos;
     }
 
     public void moveWrist(boolean up) {
-
         if (up) {
             setVelocity(.35, .05, wristMotor, true);
         } else {

@@ -5,7 +5,6 @@ import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
-import frc.robot.command.ClimberCMD;
 import frc.robot.subsystems.climber.ClimberSubsystem;
 import frc.robot.subsystems.elevator.ElevatorSubsystem;
 import frc.robot.subsystems.swervedrive.SwerveSubsystem;
@@ -87,7 +86,7 @@ public class RobotContainer
     operatorXbox.povUp().onFalse(wrist.holdArmPositionCommand());
 
     //use RIGHT BUMPER to climb
-    operatorXbox.rightBumper().whileTrue(new ClimberCMD(climber));    
+    operatorXbox.rightBumper().whileTrue(climber.climberGoingDown());    
 
   }
 
